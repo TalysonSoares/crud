@@ -1,5 +1,5 @@
 function filtrar() {
-    let expressao= input_busca.value //valor que o usuario digitous
+    let expressao = input_busca.value.toLowerCase(); //valor que o usuario digitous
 
 
     //pegando todas as linhas da tabela
@@ -9,8 +9,10 @@ function filtrar() {
         if (isNaN(posicao) ) {
             continue;
         }
+    
+        let linha = linhas[posicao].innerText.toLowerCase();
 
-        if( linhas[posicao].innerText.includes(expressao) ) {
+        if( linha.includes(expressao) ) {
             linhas[posicao].style.display = '';
         } else {
             linhas[posicao].style.display = 'none';
