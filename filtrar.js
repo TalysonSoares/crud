@@ -1,6 +1,6 @@
 function filtrar() {
-    let expressao = input_busca.value.toLowerCase(); //valor que o usuario digitous
-
+    //valor que o usuario digitous
+    let expressao = input_busca.value.toLowerCase(); 
 
     //pegando todas as linhas da tabela
     let linhas = tabela_compras.getElementsByTagName('tr'); 
@@ -9,10 +9,12 @@ function filtrar() {
         if (isNaN(posicao) ) {
             continue;
         }
-    
-        let linha = linhas[posicao].innerText.toLowerCase();
+        
+        let coluna1 = linhas[posicao].children[1].innerText.toLowerCase()
 
-        if( linha.includes(expressao) ) {
+       // let linha = linhas[posicao].innerText.toLowerCase();
+
+        if( coluna1.includes(expressao) ) {
             linhas[posicao].style.display = '';
         } else {
             linhas[posicao].style.display = 'none';
