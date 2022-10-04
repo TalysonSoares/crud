@@ -12,6 +12,8 @@ function marcarTodos() {
        
        cadaCheck.checked = check_all.checked
     });
+
+    acionarBotaoExcluir()
 }
 
 function buscarParaEditar(id) {
@@ -94,7 +96,7 @@ function atualizarLista() {
             lista.forEach(function (cadaItem) {
                 tabela_compras.innerHTML += `
                 <tr>
-                    <td> <input data-check="acao" type="checkbox"> </td>
+                    <td> <input onclick="acionarBotaoExcluir()" data-check="acao" type="checkbox"> </td>
                     <td>${cadaItem.id}</td>
                     <td>${cadaItem.item}</td>
                     <td>${cadaItem.quantidade}</td>

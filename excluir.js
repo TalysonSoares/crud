@@ -1,18 +1,19 @@
 function acionarBotaoExcluir() {
-
-    btn_remove_all.classList.remove('d-none');
-
     //document.getElementById('btn_remove_all').remove('d-none');
 
+    let todosChecks = document.querySelectorAll('[data-check="acao"]')
+    
+    let quantidade = 0;
+
+    todosChecks.forEach((cadaCheck) => {
+        cadaCheck.checked === true && quantidade++;
+    })
+
+    if (quantidade > 0) {
+        btn_remove_all.classList.remove('d-none');
+    } else {
+        btn_remove_all.classList.add('d-none');
+    }
 }
 
-//pegando todos os inputs (checkboxes) que estao na tabela
-let todosOsChecks = document.querySelectorAll('[data-acao="check"]');
-
-//percorrendo todos os checkboxes
-todosOsChecks.forEach( (cadaCheck) => {
-    cadaCheck.addEventListener('click', () => {
-        
-    })
-});
 
