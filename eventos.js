@@ -4,7 +4,13 @@ function marcarTodos() {
     let todos = document.querySelectorAll('[data-check="acao"]');
 
     todos.forEach((cadaCheck) => {
-        cadaCheck.checked = true;
+      /* if(check_all.checked === true) {
+          cadaCheck.checked = true;
+       } else {
+            cadaCheck.checked = false;
+       }*/
+       
+       cadaCheck.checked = check_all.checked
     });
 }
 
